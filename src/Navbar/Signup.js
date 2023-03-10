@@ -43,7 +43,7 @@ const SignUp = () => {
 
         const { firstName, lastName, email, password } = data
         if (firstName && lastName && email && password) {
-            axios.post("https://backenddataa.onrender.com/signup", data)
+            axios.post("https://backendapidata.onrender.com/signup", data)
             .then((res) => { alert(res.data.msg); navigate("/login"); })
             // .then((res) => { alert(res.data.msg, "please login now"); })
                 .catch((err) => {

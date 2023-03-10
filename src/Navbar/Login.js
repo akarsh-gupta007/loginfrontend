@@ -40,7 +40,7 @@ const Login = ({ setLoginUser }) => {
 
         const { email, password } = logindata
         if (email && password) {
-            axios.post("https://backenddataa.onrender.com/login", logindata)
+            axios.post("https://backendapidata.onrender.com/login", logindata)
                 .then((res) => { alert(res.data.msg); setLoginUser(res.data.user); navigate("/"); })
             // history.push("/Signup")
 

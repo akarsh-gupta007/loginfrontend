@@ -4,6 +4,7 @@ import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { Container } from '@mui/system';
+import Footer from './Footer';
 
 
 
@@ -53,7 +54,10 @@ const Home = (props) => {
         </Button>
 
       </Box>
+      <div>
+                <Footer sx={{ mt: 19, mb: 4, fontSize: 25 }} />
 
+            </div>
 
     </Container>
 

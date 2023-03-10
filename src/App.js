@@ -10,7 +10,7 @@ const App = () => {
       <BrowserRouter>
         <Nav />
         {/* <Home/> */}
-        <Footer/>
+        {/* <Footer/> */}
       </BrowserRouter>
 
 

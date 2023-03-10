@@ -12,11 +12,12 @@ import { Container } from '@mui/system';
 
 
 
-const Home = ({setLoginUser}) => {
+const Home = (props) => {
 
   const handlebtn=()=>{
-    setLoginUser({})
+    props.setLoginUser({})
   }
+  // console.log(setLoginUser.firstName)
   return (
 
 
@@ -37,7 +38,7 @@ const Home = ({setLoginUser}) => {
       >
 
         <Typography component="h1" variant="h5">
-          Welcome
+          Welcome {props.user.firstName} {props.user.lastName}
         </Typography>
         <Button
         onClick={handlebtn}

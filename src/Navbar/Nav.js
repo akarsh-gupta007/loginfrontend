@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Routes, Route, Link, useHistory,Switch } from "react-router-dom"
+import { Routes, Route } from "react-router-dom"
 import Login from './Login'
 import Signup from "./Signup"
 import AppBar from '@mui/material/AppBar';
@@ -11,9 +11,9 @@ import "./Style.css"
 import Home from './Home';
 const Nav = () => {
     const [user, setLoginUser] = useState({
-   
-    });
 
+    });
+    // console.log(user)
     // const onLogin = ()=>{
     //     setuser(true);
     // }
@@ -21,7 +21,7 @@ const Nav = () => {
     // const onLogout = ()=>{
     //     setuser(false);
     // }
-//    useState
+    //    useState
 
     return (
         <div>
@@ -31,8 +31,7 @@ const Nav = () => {
                         <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
                             All in One Store
                         </Typography>
-                        <Link className='Login' to="/Login" ><button className='btn_login'> Login </button></Link>
-                        <Link className='Login' to="/Signup" ><button className='btn_login' >Signup</button></Link>
+                       
                     </Toolbar>
                 </AppBar>
             </Box>
@@ -46,9 +45,9 @@ const Nav = () => {
 
 
             <Routes>
-                <Route exact path='/' element={user&& user._id?<Home setLoginUser={setLoginUser} />:<Login setLoginUser={setLoginUser}  />}/ >
-                <Route path='/Signup'element={<Signup />} />
-                <Route path='/Login' element={<Login setLoginUser={setLoginUser} />}/>
+                <Route exact path='/' element={user && user._id ? <Home setLoginUser={setLoginUser} user={user} /> : <Login setLoginUser={setLoginUser} />} />
+                <Route path='/Signup' element={<Signup />} />
+                <Route path='/Login' element={<Login setLoginUser={setLoginUser} />} />
             </Routes>
 
 

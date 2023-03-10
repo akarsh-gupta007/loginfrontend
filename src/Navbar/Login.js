@@ -3,8 +3,6 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Checkbox from '@mui/material/Checkbox';
 import Link from '@mui/material/Link';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
@@ -15,7 +13,7 @@ import Footer from './Footer';
 import { NavLink, useNavigate } from 'react-router-dom';
 // import { unstable_HistoryRouter } from 'react-router-dom';
 import axios from 'axios';
-const Login = ({setLoginUser}) => {
+const Login = ({ setLoginUser }) => {
 
     const navigate = useNavigate();
     // const history = unstable_HistoryRouter();
@@ -25,7 +23,7 @@ const Login = ({setLoginUser}) => {
         password: ""
     })
     const [storelogin, setStorelogin] = useState([]);
-
+    console.log(storelogin)
     const handleChange = (e) => {
         setLogindata({ ...logindata, [e.target.name]: e.target.value });
     }
@@ -43,8 +41,8 @@ const Login = ({setLoginUser}) => {
         const { email, password } = logindata
         if (email && password) {
             axios.post("https://backenddataa.onrender.com/login", logindata)
-            .then((res) => { alert( res.data.msg);  setLoginUser(res.data.user); navigate("/"); })
-                // history.push("/Signup")
+                .then((res) => { alert(res.data.msg); setLoginUser(res.data.user); navigate("/"); })
+            // history.push("/Signup")
 
         }
         else {
@@ -57,7 +55,7 @@ const Login = ({setLoginUser}) => {
     return (
 
         <>
-        {/* {console.log(user)} */}
+            {/* {console.log(user)} */}
             <Container component="main" maxWidth="xs">
                 <CssBaseline />
                 <Box
@@ -99,12 +97,9 @@ const Login = ({setLoginUser}) => {
                             id="password"
                             autoComplete="current-password"
                         />
-                        <FormControlLabel
-                            control={<Checkbox value="remember" color="primary" />}
-                            label="Remember me"
-                        />
+
                         <Button
-                           
+
                             type="submit"
                             fullWidth
                             variant="contained"
@@ -114,9 +109,7 @@ const Login = ({setLoginUser}) => {
                         </Button>
                         <Grid container>
                             <Grid item xs>
-                                <Link href="#" variant="body2">
-                                    Forgot password?
-                                </Link>
+
                             </Grid>
                             <Grid item>
                                 <NavLink to="/Signup">
